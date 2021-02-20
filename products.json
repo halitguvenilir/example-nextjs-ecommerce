@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Space Jelly Tshirts",
+    "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+    "image": "/images/spacejelly-tshirt.jpg",
+    "price": 20.00
+  },
+  {
+    "id": 2,
+    "title": "Space Jelly Stickers",
+    "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+    "image": "/images/spacejelly-stickers.jpg",
+    "price": 10.00
+  },
+  {
+    "id": 3,
+    "title": "Space Jelly Combo",
+    "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+    "image": "/images/spacejelly-combo.jpg",
+    "price": 25.00
+  }
+]
