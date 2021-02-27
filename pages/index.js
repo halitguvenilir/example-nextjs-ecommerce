@@ -1,10 +1,35 @@
+import {useState} from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import products from '../products.json'
 
+const defaultCart = {
+  products: {}
+}
+
 export default function Home() {
-  console.log('products', products);
+  const [cart, updateCart] = useState(defaultCart);
+
+  console.log('cart', cart);
+
+  function addToCart({id} = {}) {
+    updateCart(prev => {
+      let cartState = {...prev};
+
+      if ( cartState.products[id]) {
+        cartState.products[id].quantity = cartState.products[id].quantity + 1;
+      } else {
+        cartState.products[id] = {
+          id,
+          quantity: 1
+        }
+      }
+
+      return cartState;
+    })
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,28 +38,38 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>Space Jelly Shop</h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          The best space jellyfish swag in the universe!
+        </p>
+
+        <p className={styles.description}>
+          <strong>Items:</strong> 2
+          <br />
+          <strong>Total Cost:</strong> $20
+          <br />
+          <button>Check Out</button>
         </p>
 
         <ul className={styles.grid}>
-          {products.map(product => {
+          {products.map((product) => {
             const { id, title, description, image, price } = product;
             return (
               <li key={id} className={styles.card}>
                 <a href="https://nextjs.org/docs">
                   <img src={image} alt={title} />
                   <h3>{title}</h3>
-                  <p>${ price }</p>
-                  <p>
-                    { description }
-                  </p>
+                  <p>${price}</p>
+                  <p>{description}</p>
                 </a>
+                <p>
+                  <button onClick={() => {
+                    addToCart({
+                      id
+                    })
+                  }}>Buy Now</button>
+                </p>
               </li>
             );
           })}
